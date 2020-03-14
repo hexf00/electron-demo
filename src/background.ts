@@ -27,6 +27,8 @@ function createWindow () {
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string)
+    
+    // 打开Chromium的开发者工具集
     if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
     createProtocol('app')
