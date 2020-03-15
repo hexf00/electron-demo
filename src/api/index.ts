@@ -2,7 +2,6 @@ import { delay, checkCode } from '@/utils/request'
 
 /* start of mocking user */
 
-
 interface Users {
   [key: string]: any;
 }
@@ -13,9 +12,9 @@ const users: Users = {
     name: 'Administrator',
     roles: ['USER', 'ADMIN']
   },
-  codetrial: {
+  guest: {
     id: 100001,
-    name: 'Codetrial',
+    name: 'Guest',
     roles: ['USER']
   }
 }
@@ -24,6 +23,7 @@ export async function getUser(username: string) {
   await delay(200)
 
   const user = users[username]
+
   const response = user
     ? {
       status: '1',
@@ -31,7 +31,7 @@ export async function getUser(username: string) {
     }
     : {
       status: '1100',
-      message: 'Wrong user or password'
+      message: '用户名或密码错误'
     }
 
   return Promise.resolve(response).then(checkCode)
@@ -62,7 +62,10 @@ const exampleSource: Item[] = Array(235)
     }
   })
 
-export async function getExampleList({ filter = {} as Record<string, any>, page = {} as Record<string, any> }) {
+export async function getExampleList({
+  filter = {} as Record<string, any>,
+  page = {} as Record<string, any>
+}) {
   const { pageNo = 1, pageSize = 20 } = page
 
   const offset = (pageNo - 1) * pageSize

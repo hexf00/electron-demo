@@ -12,8 +12,8 @@ export function checkCode(response: { status: any; data?: any; message?: any }) 
   if (RESPONSE_STATUS.SUCCESS === response.status) {
     return response.data
   } else {
-    const status = 0
-    const message = 'request failed'
+    const status = response.status || 0
+    const message = response.message || 'request failed'
     throw new Error(`Error ${status}: ${message}`)
   }
 }

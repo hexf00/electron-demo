@@ -41,7 +41,7 @@
 
 <script>
 import AppHeader from './AppHeader.vue'
-import AppFooter from './AppFooter.vue'
+import AppFooter from './AppFooter'
 import AppBreadcrumb from './AppBreadcrumb.vue'
 
 export default {

@@ -3,7 +3,6 @@ import path from 'path'
 import marked from 'marked'
 
 const content = marked(fs.readFileSync(path.join(__static, 'about.md')).toString())
-console.log(123)
 
 export default {
   name: 'about',

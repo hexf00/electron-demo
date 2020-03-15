@@ -14,9 +14,14 @@
     - ElementUI
   - scss
 
+- echarts
+
 - TypeScript
 
-  -
+  - vue-property-decorator
+  - vue-class-component
+  - vuex-class
+  - vuex-module-decorators
 
 - VSCode
   - ESLint 提供 JS、TS 错误提示

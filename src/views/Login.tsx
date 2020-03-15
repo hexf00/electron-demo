@@ -9,24 +9,24 @@ import { Action } from 'vuex-class'
 })
 export default class Login extends Vue {
   public formValues = {
-    usr: '',
-    pwd: ''
+    username: '',
+    password: ''
   }
 
   public rules = {
-    usr: [{ required: true, message: '请输入账号', trigger: 'blur' }],
-    pwd: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+    username: [{ required: true, message: '请输入账号', trigger: 'blur' }],
+    password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
   }
 
   @Action('getUser')
-  public getUser!: <T>(usr: string) => Promise<T>
+  public getUser!: <T>(username: string) => Promise<T>
 
   async login() {
-    const { usr } = this.formValues
-    console.log(usr)
+    const { username } = this.formValues
+    console.log(username)
 
     try {
-      await this.getUser(usr)
+      await this.getUser(username)
       this.$notify.success({
         duration: 1000,
         title: '成功',
@@ -60,6 +60,11 @@ export default class Login extends Vue {
     from.resetFields()
   }
 
+  mounted() {
+    this.formValues.username = 'guest'
+    this.formValues.password = '123456'
+  }
+
   render() {
     console.log(123)
     return <div class={style.login} >
@@ -72,21 +77,21 @@ export default class Login extends Vue {
         </div>
         <div class="login-form">
           <Form props={{ model: this.formValues } } status-icon rules={this.rules} ref="loginForm">
-            <FormItem prop="usr">
+            <FormItem prop="username">
               <el-input
                 type="text"
-                placeholder="普通用户 codetrial / 管理员 admin"
-                vModel={this.formValues.usr}
+                placeholder="普通用户 guest / 管理员 admin"
+                vModel={this.formValues.username}
                 autocomplete="off"
               >
                 <template slot="prepend">账号</template>
               </el-input>
             </FormItem>
-            <el-form-item prop="pwd">
+            <el-form-item prop="password">
               <el-input
                 type="password"
                 placeholder="请输入任意密码"
-                vModel={this.formValues.pwd}
+                vModel={this.formValues.password}
                 autocomplete="off"
               >
                 <template slot="prepend">密码</template>
