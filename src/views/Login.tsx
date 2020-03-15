@@ -1,4 +1,4 @@
-import style from './login.module.scss'
+import style from './Login.module.scss'
 import Component from 'vue-class-component'
 import Vue from 'vue'
 import { Form, FormItem } from 'element-ui'

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import AppLayout from '@/components/layout/AppLayout.vue'
 import BlankLayout from '@/components/layout/BlankLayout.vue'
-import Home from '@/views/Home.vue'
+import Home from '@/views/Home'
 import Login from '@/views/Login'
 import { Forbidden, NotFound, InternalServerError } from '@/components/errors'
 
@@ -28,6 +28,15 @@ const routes = [
           requiresUser: true
         },
         component: Home
+      },
+      {
+        path: '/echarts',
+        name: 'echarts',
+        // meta: {
+        //   requiresUser: true
+        // },
+        component: () =>
+          import(/* webpackChunkName: "about" */ '@/views/echarts/echarts')
       },
       {
         path: '/about',

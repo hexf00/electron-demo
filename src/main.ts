@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { sync } from 'vuex-router-sync'
 import App from './App'
-import router from './router/'
+import router from './router/router'
 import store from './store'
 // import './registerServiceWorker.ts'
 
