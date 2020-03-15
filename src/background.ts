@@ -2,8 +2,8 @@
 
 import { app, protocol, BrowserWindow } from 'electron'
 import {
-  createProtocol,
-  // installVueDevtools 
+  createProtocol
+  // installVueDevtools
 } from 'vue-cli-plugin-electron-builder/lib'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -27,7 +27,7 @@ function createWindow () {
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string)
-    
+
     // 打开Chromium的开发者工具集
     if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
@@ -69,7 +69,7 @@ app.on('ready', async () => {
     // Electron will not launch with Devtools extensions installed on Windows 10 with dark mode
     // If you are not using Windows 10 dark mode, you may uncomment these lines
     // In addition, if the linked issue is closed, you can upgrade electron and uncomment these lines
-    
+
     // 自动从google商店下载vue devtools 工具进行安装
     // try {
     //   await installVueDevtools()

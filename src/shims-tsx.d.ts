@@ -8,6 +8,10 @@ declare global {
     interface ElementClass extends Vue {}
     interface IntrinsicElements {
       [elem: string]: any;
+      test: { a: string };
+    }
+    interface ElementAttributesProperty {
+      $props: any;
     }
   }
 }

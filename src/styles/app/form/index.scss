@@ -1,0 +1,21 @@
+.standard-form-container {
+  .standard-form {
+    width: 600px;
+
+    .el-radio-group,
+    .el-checkbox-group {
+      line-height: 40px;
+    }
+
+    .el-radio-group .el-radio,
+    .el-checkbox-group .el-checkbox {
+      line-height: 40px;
+      margin-right: 30px;
+    }
+
+    .el-radio-group .el-radio + .el-radio,
+    .el-checkbox-group .el-checkbox + .el-checkbox {
+      margin-left: 0;
+    }
+  }
+}

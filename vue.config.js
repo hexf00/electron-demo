@@ -1,7 +1,7 @@
 module.exports = {
   configureWebpack: {
     // 调试用到
-    devtool: 'source-map'
+    devtool: false
   },
   pluginOptions: {
     electronBuilder: {

@@ -1,0 +1,19 @@
+.login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .login-card {
+    width: 480px;
+    margin-bottom: 100px;
+    .el-form-item {
+      margin-bottom: 36px;
+
+      & >>> .el-form-item__error {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}
