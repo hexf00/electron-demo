@@ -1,13 +1,21 @@
 {
+  "editor.tabSize": 2,
+
+  // eslint插件配置
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
-  "eslint.validate": [
-    "javascript",
-    "vue",
-    "typescript",
-    "typescriptreact"
-  ],
-  "editor.formatOnSave": true,
-  "editor.tabSize": 2,
-  "prettier.semi": false
+  "eslint.validate": ["javascript", "vue", "typescript", "typescriptreact"],
+
+  // 去掉代码结尾的分号
+  "prettier.semi": false,
+  // 保存时自动调用linter工具
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true,
+    // For Stylelint
+    "source.fixAll.stylelint": true,
+    "source.fixAll": true
+  },
+  // 自动格式化
+  "editor.formatOnSave": true
 }

@@ -24,6 +24,12 @@ export default class extends Vue {
     // })
     // 绘制图表
     myChart.setOption({
+      // 关闭动画
+      // animation: false,
+
+      // 关闭渐进式渲染，交互时可能会导致一部分元素重新渲染
+      // progressive: 0,
+
       title: {
         text: 'ECharts 入门示例'
       },
