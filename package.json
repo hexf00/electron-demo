@@ -16,7 +16,7 @@
     "core-js": "^3.6.4",
     "echarts": "^4.6.0",
     "element-ui": "^2.4.11",
-    "marked": "^0.8.0",
+    "marked": "^4.0.10",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.2",
     "vue-property-decorator": "^8.3.0",
